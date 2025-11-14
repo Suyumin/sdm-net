@@ -12,7 +12,7 @@ from tqdm import tqdm
 from Mobilenetv2B import mobilenetv2 as create_model
 from utils import read_split_data, train_one_epoch, evaluate
 
-# ----------- 工具：一轮完整训练 -----------
+
 def run_one_train(run_id: int, args):
     best_acc = 0.
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
@@ -151,4 +151,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
