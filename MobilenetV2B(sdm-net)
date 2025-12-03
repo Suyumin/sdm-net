@@ -22,7 +22,7 @@ class h_swish(nn.Module):
         return x * self.sigmoid(x)
 
 
-class CoordAtt(nn.Module):
+class CAA(nn.Module):
     def __init__(self, inp, oup, reduction=32):
         super(CoordAtt, self).__init__()
         self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
@@ -113,7 +113,7 @@ class InvertedResidual(nn.Module):
             # 3x3 depthwise conv
             ConvBNReLU(hidden_channel, hidden_channel, stride=stride, groups=hidden_channel),
             # 在这里插入注意力机制
-            CoordAtt(hidden_channel, hidden_channel),
+            CAA(hidden_channel, hidden_channel),
             nn.Conv2d(hidden_channel, out_channel, kernel_size=1, bias=False),
             nn.BatchNorm2d(out_channel),
         ])
