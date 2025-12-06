@@ -1,14 +1,14 @@
 🚀 准备数据集
 数据集需按如下结构组织：
 your_dataset/
-├── train/
-│   ├── class1/
-│   ├── class2/
-│   └── ...
-└── val/
-    ├── class1/
-    ├── class2/
-    └── ...
+   ├── train/
+   │   ├── class1/
+   │   ├── class2/
+   │   └── ...
+   └── val/
+       ├── class1/
+       ├── class2/
+       └── ...
 修改训练脚本中的数据路径（第 45 行）：
 image_path = os.path.join(data_root, "your_dataset")  # 修改为你的数据集名称
 🎯模型训练
